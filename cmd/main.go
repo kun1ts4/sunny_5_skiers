@@ -19,4 +19,9 @@ func main() {
 		log.Fatalf("ошибка парсинга событий: %v", err)
 	}
 	fmt.Println(events)
+
+	competitors := parser.BuildCompetitors(events, conf)
+	for _, competitor := range competitors {
+		fmt.Println(competitor)
+	}
 }

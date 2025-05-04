@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"fmt"
 	"io"
 	"os"
 	"strconv"
@@ -27,7 +28,12 @@ func ParseEvents(path string) ([]model.Event, error) {
 		if stringEvent == "" {
 			continue
 		}
+
+		stringEvent = strings.TrimSpace(stringEvent)
 		parts := strings.Split(stringEvent, " ")
+		if len(parts) < 3 {
+			return nil, fmt.Errorf("некорректный формат события: %s", stringEvent)
+		}
 
 		eventId, err := strconv.Atoi(parts[1])
 		if err != nil {
