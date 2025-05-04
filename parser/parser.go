@@ -10,10 +10,10 @@ import (
 
 func ParseEvents(path string) ([]model.Event, error) {
 	file, err := os.Open(path)
-	defer file.Close()
 	if err != nil {
 		return nil, err
 	}
+	defer file.Close()
 
 	data, err := io.ReadAll(file)
 	if err != nil {
@@ -40,7 +40,7 @@ func ParseEvents(path string) ([]model.Event, error) {
 		}
 
 		event := model.Event{
-			Time:       parts[1],
+			Time:       parts[0],
 			Id:         eventId,
 			Competitor: competitorId,
 		}

@@ -11,10 +11,11 @@ func LoadConfig(path string) (model.Config, error) {
 	config := model.Config{}
 
 	file, err := os.Open(path)
-	defer file.Close()
+
 	if err != nil {
 		return config, err
 	}
+	defer file.Close()
 
 	data, err := io.ReadAll(file)
 	if err != nil {
