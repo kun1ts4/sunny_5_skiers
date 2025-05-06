@@ -1,8 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
+	"os"
 	"sunny_5_skiers/config"
 	"sunny_5_skiers/parser"
 )
@@ -24,4 +26,19 @@ func main() {
 	for _, competitor := range competitors {
 		fmt.Println(competitor)
 	}
+
+	file, err := os.Create("out/results.json")
+	if err != nil {
+		return
+	}
+
+	defer file.Close()
+
+	bytes, _ := json.MarshalIndent(competitors, "", "\t")
+	_, err = file.Write(bytes)
+	if err != nil {
+		return
+		log.Fatalf(err.Error())
+	}
+
 }

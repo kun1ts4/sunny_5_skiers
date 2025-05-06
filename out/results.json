@@ -1,0 +1,82 @@
+{
+	"1": {
+		"total_time": "[00:00:01.744]",
+		"laps": [
+			{
+				"time": 753,
+				"average_speed": 4.648074369189907
+			},
+			{
+				"time": 0,
+				"average_speed": 0
+			}
+		],
+		"penalty_laps_time": "",
+		"penalty_laps_speed": 0,
+		"shooting_stats": ""
+	},
+	"2": {
+		"total_time": "[00:00:01.503]",
+		"laps": [
+			{
+				"time": 758,
+				"average_speed": 4.617414248021108
+			},
+			{
+				"time": 0,
+				"average_speed": 0
+			}
+		],
+		"penalty_laps_time": "",
+		"penalty_laps_speed": 0,
+		"shooting_stats": ""
+	},
+	"3": {
+		"total_time": "[00:00:00.887]",
+		"laps": [
+			{
+				"time": 762,
+				"average_speed": 4.593175853018373
+			},
+			{
+				"time": 0,
+				"average_speed": 0
+			}
+		],
+		"penalty_laps_time": "",
+		"penalty_laps_speed": 0,
+		"shooting_stats": ""
+	},
+	"4": {
+		"total_time": "[00:00:01.278]",
+		"laps": [
+			{
+				"time": 765,
+				"average_speed": 4.57516339869281
+			},
+			{
+				"time": 0,
+				"average_speed": 0
+			}
+		],
+		"penalty_laps_time": "",
+		"penalty_laps_speed": 0,
+		"shooting_stats": ""
+	},
+	"5": {
+		"total_time": "[00:00:00.331]",
+		"laps": [
+			{
+				"time": 800,
+				"average_speed": 4.375
+			},
+			{
+				"time": 0,
+				"average_speed": 0
+			}
+		],
+		"penalty_laps_time": "",
+		"penalty_laps_speed": 0,
+		"shooting_stats": ""
+	}
+}

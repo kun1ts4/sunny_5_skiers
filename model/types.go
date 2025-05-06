@@ -1,12 +1,12 @@
 package model
 
 type Config struct {
-	Laps        int    `json:"laps"`
-	LapLen      int    `json:"lapLen"`
-	PenaltyLen  int    `json:"penaltyLen"`
-	FiringLines int    `json:"firingLines"`
-	Start       string `json:"start"`
-	StartDelta  string `json:"startDelta"`
+	Laps        int     `json:"laps"`
+	LapLen      float64 `json:"lapLen"`
+	PenaltyLen  float64 `json:"penaltyLen"`
+	FiringLines int     `json:"firingLines"`
+	Start       string  `json:"start"`
+	StartDelta  string  `json:"startDelta"`
 }
 
 type Event struct {
@@ -17,23 +17,26 @@ type Event struct {
 }
 
 type Lap struct {
-	Time      float64
-	Speed     float64
-	IsPenalty bool
-	Hits      int
-	Shots     int
-	Start     string
-	Finish    string
+	Time      float64          `json:"time"`
+	Speed     float64          `json:"average_speed"`
+	Length    float64          `json:"-"`
+	IsPenalty bool             `json:"-"`
+	Shots     map[int]struct{} `json:"-"`
+	Hits      int              `json:"-"`
+	Start     string           `json:"-"`
+	Finish    string           `json:"-"`
 }
-
 type Competitor struct {
-	TotalTime    string
-	PlanedStart  string
-	StartLine    string
-	ActualStart  string
-	Started      bool
-	Laps         []Lap
-	CurrentLapId int
+	TotalTime     string  `json:"total_time"`
+	PlanedStart   string  `json:"-"`
+	StartLine     string  `json:"-"`
+	ActualStart   string  `json:"-"`
+	Started       bool    `json:"-"`
+	Laps          []Lap   `json:"laps"`
+	CurrentLapId  int     `json:"-"`
+	PenaltyTime   string  `json:"penalty_laps_time"`
+	PenaltySpeed  float64 `json:"penalty_laps_speed"`
+	ShootingStats string  `json:"shooting_stats"`
 }
 
 // [NotFinished] 1 [{00:29:03.872, 2.093}, {,}] {00:01:44.296, 0.481} 4/5
